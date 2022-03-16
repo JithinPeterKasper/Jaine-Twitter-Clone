@@ -88,16 +88,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'deb6rbpbfh6eq9',
-#         'USER': 'vxvdutovzvhuyq',
-#         'HOST': 'ec2-44-194-167-63.compute-1.amazonaws.com',
-#         'PORT': 5432,
-#         'PASSWORD': '0929298571c97148e94dd0320927f2cb7fe471462fb7c72f70c3fba3a92963bc',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd64a8re6kkqoco',
+        'USER': 'awdjcawiekdgid',
+        'HOST': 'ec2-54-90-55-211.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'PASSWORD': '7e5a7caffa4bf181679b50cc17cccf43d09b1ddabaaa2b2c53a3dfbcc8b12d1d',
+    }
+}
 
 
 
