@@ -47,15 +47,16 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
-    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
+
+
 ]
 
 ROOT_URLCONF = 'django_forum.urls'
@@ -63,7 +64,7 @@ ROOT_URLCONF = 'django_forum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'django_forum.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'dbsqlite3'),
     }
 }
 # DATABASES = {
@@ -98,7 +99,6 @@ DATABASES = {
 #         'PASSWORD': '7e5a7caffa4bf181679b50cc17cccf43d09b1ddabaaa2b2c53a3dfbcc8b12d1d',
 #     }
 # }
-
 
 
 # Password validation
@@ -146,15 +146,14 @@ STATICFILES_DIRS = (
 )
 
 
-
-cloudinary.config( 
-  cloud_name = "dkmruzopl", 
-  api_key = "815993551516237", 
-  api_secret = "39Db9HQg5DNKN4aFmMWQNSt3Y_k" 
+cloudinary.config(
+    cloud_name="dkmruzopl",
+    api_key="815993551516237",
+    api_secret="39Db9HQg5DNKN4aFmMWQNSt3Y_k",
+    secure=True
 )
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
